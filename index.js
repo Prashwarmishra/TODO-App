@@ -6,9 +6,11 @@ const ToDo = require('./models/todoSchema');
 
 const app = express();
 
-// app.post('/create-description', function(req, res){
-
-// })
+app.post('/create-description', function(req, res){
+    ToDo.create({
+        description = 
+    })
+})
 
 app.listen(port, function(err){
     if (err){

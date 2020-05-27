@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            ToDo App
+        </title>
+        <link rel="stylesheet" type="text/css" href="home.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    </head>
+    <body>
+        <header>
+            <h1><i class="fas fa-edit"></i> To Do App</h1>
+        </header>
+        <div id="description">
+            
+            <form method="POST" action="create-description">
+                <hr>
+                <div id="first-row">
+                    <p id="division-para">DESCRIPTION</p>
+                    <input type="text" name="description" id="description" placeholder="What do you need to do?">
+                </div>
+                <hr>
+                <div id="second-row">
+                    <div id="category-div">
+                        <p id="division-para">CATEGORY</p>
+                        <select name="category" id="category">
+                            <option value="">Choose a category</option>
+                            <option value="">Personal</option>
+                            <option value="">Work</option>
+                            <option value="">School</option>
+                            <option value="">Cleaning</option>
+                            <option value="">Other</option>
+                        </select>
+                    </div>
+                    <div id="due-date-div">
+                        <p id="division-para">DUE DATE</p>
+                        <input id="due-date-input" type="date">
+                    </div>
+                </div>
+                <hr>
+                <div id="third-row">
+                    <div id="add-task">
+                        <button type="submit" class="button add-task-icon"><i class="fas fa-plus-square "></i> ADD TASK</button>
+                    </div>
+                    <div id="delete-task">
+                        <button type="submit" class="button delete-task-icon"><i class="fas fa-trash-alt "></i> DELETE TASK</button>
+                    </div>
+                </div>
+                <hr>
+            </form>
+
+            
+        </div>
+
+        <script src="home.js"></script>
+    </body>
+
+</html>
