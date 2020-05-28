@@ -2,23 +2,49 @@
 <html>
     <head>
         <title>
-            <%= title %>
+            ToDo App
         </title>
-        <link rel="stylesheet" type="text/css" href="page1.css">
+        <link rel="stylesheet" type="text/css" href="/css/home.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     </head>
     <body>
         <header>
             <h1><i class="fas fa-edit"></i> To Do App</h1>
         </header>
-        <div id="description">
-            <p><b>DESCRIPTION</b></p>
-            <form method="POST" action="create-description">
-                <input type="text" name="description" placeholder="What do you need to do?">
-            </form>
-        </div>
 
+        <form action="/create-task" method="POST">
+            <input type="text" id="description" name="description" placeholder="What's do you need to add?">
+            <select id="category" name="category">
+                <option value="Work">Work</option>
+                <option value="School">School</option>
+                <option value="Personal">Personal</option>
+                <option value="Cleaning">Cleaning</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="date" id="due_Date" name="dueDate" placeholder="Due Date">
 
+            <button type="submit" id="task-button">Add Task</button>
+        </form>
+
+        <ul>
+            <%for (items of todo_list){%>
+                <li>
+                    <hr>
+                    <div>
+                        <%= items.description%>
+                        <%= items.category%>
+                        <%= items.dueDate%>
+                    </div>
+                    <div>
+                        <a href="/delete-task/?id=<%= items._id %>">
+                            <i class="fas fa-window-close"></i>
+                        </a>
+                    </div>
+                </li>
+            <%}%>
+        </ul>
+
+        <script src="/js/home.js"></script>
     </body>
 
 </html>
