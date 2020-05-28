@@ -8,38 +8,25 @@ const ToDo = require('./models/todoSchema');
 
 const app = express();
 
-app.use(express.urlencoded());
-app.use(express.static('./assets'));
-
 app.set("view engine", "ejs");
 app.set("views", "./views");
 
-let todoList = [
-    {
-        description: "Buy Eggs",
-        category: "Home",
-        dueDate: "29/05/2020"
-    },
-    {
-        description: "Finish Homework",
-        category: "School",
-        dueDate: "29/05/2020"
-    }
-];
+app.use(express.urlencoded());
+app.use(express.static('./assets'));
 
 app.get('/', function(req, res){
     ToDo.find({}, function(err, tasks){
         if (err){
             console.log(`There was an error in fetching the task from the database: ${err}`);
-            return
         }
         console.log(`The task is successfully fetched from the database.`);
         return res.render('home', {
+            title: "TODO",
             todo_list: tasks
-        })
+        });
     });
     
-})
+});
 
 app.post('/create-task', function(req, res){
     ToDo.create({
@@ -51,8 +38,9 @@ app.post('/create-task', function(req, res){
             console.log("There was an error in connecting the server to the database:", err);
         }
         console.log("The task has been successfully added to the database:", taskList);
+        
         return res.redirect('back');
-    })
+    });
 });
 
 app.get('/delete-task', function(req, res){
@@ -93,4 +81,4 @@ app.listen(port, function(err){
         return
     }
     console.log(`The server is up and running at the port: ${port}`);
-})
+});

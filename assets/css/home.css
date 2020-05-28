@@ -1,8 +1,101 @@
 body{
-    margin: 0px;
+    margin: 0;
     text-align: center;
+    width: 25rem;
+    margin: 1px auto;
 }
+#division-heading{
+    font-size: 0.7rem;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: darkslategrey;
+    text-align: start;
+    margin: 0px;
+}
+
 /*------header------*/
 h1{
     font-family: sans-serif;
+}
+/*------------------------body----------------------*/
+/*---first-row------*/
+#create-description{
+    border-top: 1px solid black;
+
+}
+#description{
+    width: 20rem;
+    height: 2rem;
+    margin-left: -80px;
+    text-align: start;
+    border: 0px solid transparent;
+}
+#description:focus {
+    outline:none;
+}
+/*---second-row-----*/
+#second-row{
+    display: flex;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    border-top: 1px solid black;
+}
+#create-category{
+    width: 50%;
+    text-align: start;
+}
+#category{
+    border: 0px solid transparent;
+    width: 10rem;
+}
+#category:focus{
+    outline: none;
+}
+#create-due-date{
+    width: 50%;
+    text-align: start;
+}
+#due-date{
+    width: 10rem;
+    border: 0px solid transparent;
+}
+#due-date:focus{
+    outline: transparent;
+}
+#create-submit-btn{
+    border-top: 1px solid black;
+    padding: 5px;
+}
+#task-button{
+    width: 10rem;
+    height: 2.5rem;
+    font-size: 1.1rem;
+    font-family: sans-serif;
+    color: white;
+    background-color: darkred;
+    border: 1px solid transparent;
+}
+#details{
+    list-style: none;
+    text-align: start;
+    margin-left: -40px;
+    width: 25rem;
+}
+/*-------form------*/
+#details{
+    display: flex;
+    border-top: 1px solid black;
+}
+#task-container{
+    display: flex;
+    flex-direction: row;
+}
+#delete-task{
+    width: 10%;
+}
+#task{
+    width: 90%;
+}
+#task p{
+    display: inline;
 }

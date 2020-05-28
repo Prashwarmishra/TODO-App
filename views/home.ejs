@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>
-            ToDo App
+            <%= title %>
         </title>
         <link rel="stylesheet" type="text/css" href="/css/home.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -12,37 +12,55 @@
             <h1><i class="fas fa-edit"></i> To Do App</h1>
         </header>
 
-        <form action="/create-task" method="POST">
-            <input type="text" id="description" name="description" placeholder="What's do you need to add?">
-            <select id="category" name="category">
-                <option value="Work">Work</option>
-                <option value="School">School</option>
-                <option value="Personal">Personal</option>
-                <option value="Cleaning">Cleaning</option>
-                <option value="Other">Other</option>
-            </select>
-            <input type="date" id="due_Date" name="dueDate" placeholder="Due Date">
+        <form action="create-task" method="POST">
 
-            <button type="submit" id="task-button">Add Task</button>
+            <div id="create-description">
+                <p id="division-heading">DESCRIPTION</p>
+                <input type="text" id="description" name="description" placeholder="What's do you need to add?">
+            </div>
+            
+            <div id="second-row">
+                <div id="create-category">
+                    <p id="division-heading">CATEGORY</p>
+                    <select id="category" name="category">
+                        <option value="Work">Work</option>
+                        <option value="School">School</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Cleaning">Cleaning</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div id="create-due-date">
+                    <p id="division-heading">DUE DATE</p>
+                    <input type="date" id="due-date" name="dueDate" placeholder="Due Date">
+                </div>
+            </div>
+            
+            <div id="create-submit-btn">
+                <button type="submit" id="task-button">Add Task</button>
+            </div>
         </form>
 
-        <ul>
-            <%for (items of todo_list){%>
-                <li>
-                    <hr>
-                    <div>
-                        <%= items.description%>
-                        <%= items.category%>
-                        <%= items.dueDate%>
-                    </div>
-                    <div>
-                        <a href="/delete-task/?id=<%= items._id %>">
-                            <i class="fas fa-window-close"></i>
-                        </a>
-                    </div>
-                </li>
-            <%}%>
-        </ul>
+        <div id="task-container">
+            <ul>
+                
+                <%for (let i of todo_list){%>
+                    <li id="details">
+                        <div id="delete-task">
+                            <a href="/delete-task/?id=<%= i._id %>">
+                                <i class="fas fa-window-close"></i>
+                            </a>
+                        </div>
+                        <div id="task">
+                            <p><%= i.description %></p>
+                            <p><%= i.category %></p>
+                            <p><%= i.dueDate %></p>
+                        </div>  
+                    </li>
+                <%}%>
+            </ul>
+        </div>
 
         <script src="/js/home.js"></script>
     </body>
