@@ -10,8 +10,9 @@ body{
     font-family: sans-serif;
     color: darkslategrey;
     text-align: start;
-    margin: 0px;
+    margin-bottom: 0px;
 }
+
 
 /*------header------*/
 h1{
@@ -74,6 +75,8 @@ h1{
     color: white;
     background-color: darkred;
     border: 1px solid transparent;
+    margin-top: 5px;
+    margin-bottom: -15px;
 }
 #details{
     list-style: none;
@@ -84,7 +87,14 @@ h1{
 /*-------form------*/
 #details{
     display: flex;
+    background-color: rgb(240, 159, 9);
     border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+}
+#task-description{
+    font-size: 0.9rem;
+    font-weight: bold;
 }
 #task-container{
     display: flex;
@@ -92,10 +102,33 @@ h1{
 }
 #delete-task{
     width: 10%;
+    margin-top: 20px;
+    margin-left: 15px;
+    box-sizing: border-box;
 }
 #task{
     width: 90%;
 }
 #task p{
     display: inline;
+}
+#task-first-row{
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -10px;
+}
+#task-category{
+    padding: 5px;
+    color: white;
+    width: 4rem;
+    text-align: center;
+    background-color: purple;
+    box-sizing: border-box;
+    font-size: 0.8rem;
+}
+#task-second-row{
+    font-size: 0.9rem;
+    font-family: monospace;
+    margin-bottom: 5px;
 }

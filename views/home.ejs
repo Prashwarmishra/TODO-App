@@ -23,11 +23,11 @@
                 <div id="create-category">
                     <p id="division-heading">CATEGORY</p>
                     <select id="category" name="category">
-                        <option value="Work">Work</option>
-                        <option value="School">School</option>
-                        <option value="Personal">Personal</option>
-                        <option value="Cleaning">Cleaning</option>
-                        <option value="Other">Other</option>
+                        <option value="WORK">Work</option>
+                        <option value="SCHOOL">School</option>
+                        <option value="PERSONAL">Personal</option>
+                        <option value="CLEANING">Cleaning</option>
+                        <option value="OTHER">Other</option>
                     </select>
                 </div>
                 
@@ -53,9 +53,15 @@
                             </a>
                         </div>
                         <div id="task">
-                            <p><%= i.description %></p>
-                            <p><%= i.category %></p>
-                            <p><%= i.dueDate %></p>
+                            <div id="task-first-row">
+                                <p id="task-description"><%= i.description %></p>
+                                <p id="task-category"><%= i.category %></p>
+                            </div>
+                            <div id="task-second-row">
+                                <p><i class="fas fa-calendar-alt"></i>
+                                    <%= i.dueDate %>
+                                </p>
+                            </div>
                         </div>  
                     </li>
                 <%}%>
